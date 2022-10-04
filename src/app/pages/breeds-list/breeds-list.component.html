@@ -1,0 +1,21 @@
+
+<!-- Start Breed and Sub Breed List -->
+<accordion class="accordion-breed">
+    <accordion-group *ngFor="let breed of breedList;let i =index">
+        <button
+          class="btn btn-link btn-block justify-content-between d-flex w-100 shadow-none"
+          accordion-heading type="button">
+          <div class="pull-center float-center" (click)="showBreedImage(breed)">{{breed}}</div>
+         </button>
+          <ul *ngFor="let subbreed of subBreedList[i]">
+            <li>{{subbreed}}</li>
+          </ul>
+         <span *ngIf="subBreedList[i].length <= 0">No Sub-breeds found</span>
+        </accordion-group>
+</accordion>
+<div class="text-danger">
+</div>
+<!-- Start Breed and Sub Breed List -->
+
+
+

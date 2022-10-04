@@ -1,0 +1,53 @@
+<!-- Start Multi Language  -->
+<main style="text-align: center;">
+  <!-- <select #locale (change)="translate.use(locale.value)"> -->
+  <select #locale class="form-select form-select-sm" style="width:200px ;" aria-label=".form-select-sm example" 
+  (change)="changeLocale(locale.value)" >
+    <option selected disabled>Select Language</option>
+    <option value="en">English</option>
+    <option value="es">Spanish</option>
+    <option value="ar">Arabic</option>
+  </select> 
+  <br>
+  <div style="padding: 20px;">
+     <h1 class="bg-warning text-uppercase gallery_font">
+      <span translate>{{'Gallery'}}</span>
+    </h1>
+  </div>
+</main>
+<br>
+<!-- End Multi Language  -->
+<!-- Start Gallery -->
+<section class="product">
+  <div class="container-fluid">
+    <div class="slider-wrap">
+      <div class="slider-main text-center">
+        <!-- <h1 class="bg-info text-uppercase"><b>Gallery</b></h1> -->
+        <div class="item" *ngFor="let image of ImageList">
+          <button type="button" class="btn_img">
+            <img  src="{{image}}" width="300px" alt=""
+              (click)="openModalImageView(template, image)" />
+          </button>
+        </div>
+        <div class="slider-arrow">
+          <img src="assets/images/previous.png" (click)="get_random_images()">&nbsp;
+          <img src="assets/images/next.png" (click)="get_random_images()">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Gallery -->
+
+  <!-- Start Modal view -->
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">View Breed Image</h4>
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body text-center">
+      <img [src]="modalImage" alt="image slide" class="img-fluid">
+    </div>
+  </ng-template>
+  <!-- End Modal view -->

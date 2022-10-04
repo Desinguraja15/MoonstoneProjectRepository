@@ -1,0 +1,18 @@
+<div class="container pt-5">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="button" class="btn btn-success btn btn-primary me-md-2" (click)="gotoBreedlist()">Go Home
+            Page</button>
+    </div>
+    <br>
+
+    <!-- Start Breed List -->
+    <h6 class="text-uppercase my-3">{{breedname}}</h6>
+    <div class="row">
+        <div class="col-md-3 text-center" *ngFor="let breed of breedImage">
+            <div class="card mb-4">
+                <img src="{{breed}}" class="card-img-top" alt="{{breedname}}">
+            </div>
+        </div>
+    </div>
+    <!-- End Breed List -->
+</div>

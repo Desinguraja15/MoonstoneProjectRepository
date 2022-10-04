@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+.breeds-tab{
+    .tab-content{
+        padding: 20px;
+        border: 1px solid #f8f9fa;
+    }
+}
+.gallery-carousel{
+    .carousel-item{
+        margin-right: 0;
+    }
+    .carousel {
+        img{
+            width: 268px;
+            height: 250px;
+            object-fit: cover;
+        }
+        .carousel-control{
+            .sr-only{
+                display: none;
+            }
+        }
+    }    
+}
+.accordion-breed{
+    overflow: auto;
+    max-height: 414px;
+    .panel-title{
+        button{
+            text-decoration: none;
+        }
+        div{
+            text-transform: capitalize;
+        }
+    }
+}
+.cursor-pointer{
+    cursor: pointer;
+}
